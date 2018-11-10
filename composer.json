@@ -22,7 +22,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "DigiTickets\\DigiTicketsVoucher\\": "src"
+      "DigiTickets\\OmnipayAbstractVoucher\\": "src"
     }
   },
   "require": {
