@@ -40,10 +40,7 @@ class AbstractMessage
         }
     }
 
-    /**
-     * @return string
-     */
-    public function getVoucherNumber()
+    public function getVoucherNumber(): string
     {
         return $this->voucherNumber;
     }
@@ -51,14 +48,11 @@ class AbstractMessage
     /**
      * @return float|null
      */
-    public function getAllocationAmount(): float
+    public function getAllocationAmount()
     {
         return $this->allocationAmount;
     }
 
-    /**
-     * @return null|string
-     */
     public function getOrderLineRef(): string
     {
         return $this->orderLineRef;
@@ -72,10 +66,7 @@ class AbstractMessage
         return $this->paymentID;
     }
 
-    /**
-     * @return string
-     */
-    public function getRequestType()
+    public function getRequestType(): string
     {
         assert(static::REQUEST_TYPE != self::REQUEST_TYPE, 'Request type must be specified in the subclass');
 
