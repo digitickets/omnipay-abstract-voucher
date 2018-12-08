@@ -25,13 +25,11 @@ abstract class AbstractVoucherGateway extends AbstractGateway
 
     public function register($listener)
     {
-error_log('[Driver] Yay, something is adding a listener!');
         $this->listeners[] = $listener;
     }
 
     public function getListeners()
     {
-error_log('[Driver] Returning the listeners');
         return $this->listeners;
     }
 }

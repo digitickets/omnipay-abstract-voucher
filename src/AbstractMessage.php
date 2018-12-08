@@ -2,7 +2,7 @@
 
 namespace DigiTickets\OmnipayAbstractVoucher;
 
-class AbstractMessage
+abstract class AbstractMessage
 {
     const REQUEST_TYPE = '!';
 
