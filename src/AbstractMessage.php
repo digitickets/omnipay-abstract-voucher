@@ -17,9 +17,9 @@ abstract class AbstractMessage
     private $allocationAmount;
 
     /**
-     * @var int|null
+     * @var string|null
      */
-    private $paymentID;
+    private $transactionId;
 
     /**
      * @var string|null A reference to the line(s) that the host system has redeemed the voucher against.
@@ -30,14 +30,8 @@ abstract class AbstractMessage
     {
         $this->voucherNumber = $voucherNumber;
         $this->allocationAmount = $allocationAmount;
+        $this->transactionId = $transactionId;
         $this->orderLineRef = $orderLineRef;
-
-        if ($transactionId) {
-            $transactionParts = explode('x', $transactionId);
-            if (count($transactionParts) == 2) {
-                $this->paymentID = (int)$transactionParts[1];
-            }
-        }
     }
 
     public function getVoucherNumber(): string
@@ -59,11 +53,11 @@ abstract class AbstractMessage
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getPaymentID()
+    public function getTransactionId()
     {
-        return $this->paymentID;
+        return $this->transactionId;
     }
 
     public function getRequestType(): string
